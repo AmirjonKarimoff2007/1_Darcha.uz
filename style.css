@@ -1,41 +1,234 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'popisn',sans-serif;
+    font-family: 'popisn', sans-serif;
 }
-body{
+
+.clearfix {
+    clear: both;
+}
+
+body {
     color: #edeeed;
 }
-.header{
+
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 10px 10%;
     background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 50;
+    background-color: #0b1d2b;
+
 }
-.logo{
+
+.logo {
+    cursor: default;
     position: relative;
     font-size: 25px;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
+    opacity: 0;
+    animation: slideRight 3s ease forwards;
+
 }
-.navbar a{
+
+.navbar a {
     display: inline-block;
-    font-size: 25px;
+    font-size: 17px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
     transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
 }
-.navbar a:hover{
+
+.navbar a:hover {
     color: #0ef;
 }
 
+.home {
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    background: #0b1d2b no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h3 {
+    margin: 10px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 20px;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3:nth-of-type() {
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+
+}
+
+.home-content h3 span {
+    color: #0ef;
+}
+
+.home-content h1 {
+
+    font-size: 56px;
+    font-weight: 700;
+    margin: 15px auto;
+    margin-left: 10px;
+    text-transform: capitalize;
+    opacity: 0;
+    animation: slideRight 3s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 18px;
+    margin-left: 10px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #0ef;
+    border-radius: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.home-sci a:hover {
+    background-color: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.main-section__image {
+    border-radius: 50% 50% 50% 50%;
+    text-align: right;
+    width: 45%;
+    height: 78%;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px cyan,
+    0 0 100px cyan, 0 0 200px cyan;
+    z-index: 100;
+    padding: 12px 28px;
+
+}
+
+.main-section__image img {
+    width: 450px;
+    height: 450px;
+    margin-right: 100px;
+
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+    box-shadow: 0 0 5px #0ef,
+        0 0 25px #0ef;
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 5px cyan,
+        0 0 25px cyan, 0 0 50px cyan,
+        0 0 100px cyan, 0 0 200px cyan
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.page {
+    background-color: white;
+}
