@@ -85,7 +85,7 @@
     animation-delay: .7s;
 }
 
-.home-content h3:nth-of-type(2) {
+.home-content h3:nth-of-type() {
     margin-bottom: 30px;
     animation: slideTop 1s ease forwards;
     animation-delay: .7s;
@@ -131,6 +131,7 @@
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: calc(.2s * var(--i));
+    
 }
 
 .home-sci a:hover {
@@ -140,15 +141,17 @@
 }
 
 .main-section__image {
-    border-radius: 50% 50% 50% 50%;
+    border-radius: 50% 50% 50% 50%; 
     text-align: right;
     width: 45%;
     height: 78%;
-    z-index: 100;
-    padding: 12px 28px;
     box-shadow: 0 0 5px cyan,
     0 0 25px cyan, 0 0 50px cyan,
     0 0 100px cyan, 0 0 200px cyan;
+    z-index: 100;
+    padding: 12px 28px;
+    
+
 }
 
 .main-section__image img {
@@ -252,7 +255,7 @@
 }
 
 .card{
-    height: 385px;
+    height: 365px;
     width: 335px;
     padding: 20px 35px;
     background: #191919;
@@ -268,7 +271,7 @@
     display: inline-block;
     text-align: center;
     margin: 25px 0 ;
-    color: rgb(254, 153, 102);
+    color: #fe9966;
     opacity: 0;
     animation: slideTop 1s ease forwards;
     animation-delay: 1s;
@@ -288,12 +291,19 @@
     color: #fcfc;
     font-size: 16px;
     line-height: 27px;
-    margin-bottom: 25px;   
+    margin-bottom: 25px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;  
+
+}
+.pra:nth-child(){
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1s; 
 }
 .card .button{
+    margin: 20px;
     background-color: #0ef;
     color: white;
     text-decoration: none;
@@ -302,8 +312,10 @@
     padding: 9px 22px;
     border-radius: 40px;
     transition: .4s;
-    
-}
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+    }
 .card .button:hover{
     background-color: transparent;
     border: 2px solid #0ef;
@@ -314,6 +326,9 @@
 
 @media only screen and (max-width: 375px){
     .header img{
-        width: 100px;
+        width: 60px;
+    }
+    .home{
+        padding-top: 500px;
     }
 }
